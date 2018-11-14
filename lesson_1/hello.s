@@ -1,8 +1,10 @@
 ;------------------------------------
 ;initial "hello world in assembly"
 ;------------------------------------
-			global		start
+
 			section		.text
+			global		start
+
 start:		mov			rax, 0x02000004
 			mov			rdi, 1
 			mov			rsi, message
