@@ -4,10 +4,10 @@
 ; todo: use it
 ;------------------------------------------------------------------
 ;default		rel
-global			_ft_strlen
+	global			_ft_strlen
 
-.section	data
+	section		.text
 _ft_strlen:
 	mov		rax, 0 ; initializing value of rax to 0 (to use it as a counter)
-	cmp		
+;	cmp		
 	ret

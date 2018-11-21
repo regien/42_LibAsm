@@ -5,7 +5,7 @@
 # include <string.h>
 
 // not done
-void		bzero(void *s, size_t n);
+void		ft_bzero(void *s, size_t n);
 
 // done
 size_t		ft_strlen(const char *str);
