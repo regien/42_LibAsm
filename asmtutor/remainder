@@ -1,0 +1,1 @@
+nasm -f macho64 lesson1.s & ld lesson1.o -o test

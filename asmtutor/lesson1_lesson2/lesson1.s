@@ -1,6 +1,7 @@
 %define		MACH_SYSCALL(nb)		0x2000000 | nb
 %define		STDOUT					1
 %define		WRITE					4
+%define		EXIT					1
 
 
 section		.data
@@ -16,5 +17,6 @@ start:
 	mov		rdx, 13			; data register 3 parameter
 	mov		rax, MACH_SYSCALL(WRITE)	; calling write syscall
 	syscall
-	mov		rax, 0
-;	int		80h
+	mov		rdi, 0						; loading first argument with 0 - 0 errors
+	mov		rax, MACH_SYSCALL(EXIT)		; loading rax with syscal 1 - exit
+	syscall
