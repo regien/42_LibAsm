@@ -25,8 +25,6 @@ start:
 
 _strlen:
 	push	rbp			; this 3
-;	mov		rbp, rsp	; lines are supposed to allign
-;	sub		rsp, 16		; the stack on Mac Osx
 	mov		rbp, rax
 
 nextchar:
