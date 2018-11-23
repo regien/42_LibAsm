@@ -1,13 +1,13 @@
-	global		main
-	extern		puts
+	global		_main
+	extern		_puts
 	section		.text
-main:
+_main:
 	push	rdi
 	push	rsi
 	sub		rsp, 8
 
 	mov		rdi, [rsi]
-	call	puts
+	call	_puts
 
 	add		rsp, 8
 	pop		rsi
@@ -15,6 +15,6 @@ main:
 
 	add		rsi, 8
 	dec		rdi
-	jnz		main
+	jnz		_main
 	
 	ret
