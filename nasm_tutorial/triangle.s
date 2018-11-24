@@ -42,6 +42,8 @@ done:
 			xor		rdi, rdi					; setting the value as 0 no errors
 			syscall
 
+
+; The good thing about the bss is that it's preallocated memory
 			section		.bss		; section to reserve data
 maxlines	equ		8
 dataSize	equ		44

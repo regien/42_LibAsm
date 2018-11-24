@@ -1,6 +1,10 @@
 			global		_main
 			extern		_printf
 
+			section		.data
+format:		db			"%20ld", 10, 0		; new line and null terminated
+
+
 			section		.text
 _main:
 			push		rbx					; saving the value of RBX (IT'S A PRESERVED REGISTER)
@@ -19,10 +23,9 @@ print:
 			push		rax					; caller-save register
 			push		rcx					; caller-save register
 			
-			mov			rdi, [rel format]	; set 1 parameter
+			lea			rdi, [rel format]	; set 1 parameter
 			mov			rsi, rax			; set second parameter
 			xor			rax, rax			; because printf is varargs
-;			sub			rsp, 16
 
 	; stack is already aligned bcause we pushed three 8 byte registers
 			call		_printf				; printf(format, current_number)
@@ -41,5 +44,3 @@ print:
 			pop			rbx					; restore rbx before returing
 			ret
 
-			section		.data
-format:		db			"%20ld", 10, 0		; new line and null terminated
