@@ -12,8 +12,8 @@ extern _puts, _printf, _malloc, _free
 ; static data
 section .data
 
-hello_world_str db "Hello world!", 10, 0
-int_str db "Address %llx", 10, 0
+hello_world_str: db "Hello world!", 10, 0
+int_str: db "Address %llx", 10, 0
 
 ; code
 section .text
