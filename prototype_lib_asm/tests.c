@@ -9,8 +9,9 @@ void	run_strlen_tests(int debug)
 	if (debug)
 	{
 		printf("yours = %zu | library = %lu\n", ft_strlen(str) , strlen(str));
-		printf("yours = %zu | library = %lu\n", ft_strlen(str2) , strlen(str2));
+//		printf("yours = %zu | library = %lu\n", ft_strlen(str2) , strlen(str2));
 		printf("yours = %zu | library = %lu\n", ft_strlen("vaina") , strlen("vaina"));
+		printf("yours = dummy | library = %lu\n",strlen(str2));
 	}
 	if (ft_strlen(str) != strlen(str) || \
 		ft_strlen(str2) != strlen(str2) || \
