@@ -35,39 +35,40 @@ _main:
 			call		_atoi			; y in rax
 			cmp			rax, 0			; disallow negative exponents
 			jl			error2			; if less than 0 then jump
-			mov			r13d, rax		; y in r13d (short) two bytes
+			mov			r11, rax		; y in r13d (short) two bytes
 
 			mov			rdi, [r12 + 8]	; argv
 			call		_atoi			; x in rax
-			mov			r14d, rax		; x in r14d
+			mov			r10, rax		; x in r14d
 
 			mov			rax, 1			; start with answer = 1
 
 check:
-			test		r13d, r13d		; we are counting y downto 0
+			test		r11, r11		; we are counting y downto 0
 			jz			gotit
-			imul		rax, r14d		; multiply in another x (1st * 2nd)
-			dec			r13d
+			imul		rax, r10		; multiply in another x (1st * 2nd)
+			dec			r11
 			jmp			check
 
 gotit:									; print report on succes
 ;			mov			rdi, answer
-			lea			rdi, messages.answer
-			movsxd		rsi, rax		; move with all and the sign
+			lea			rdi, [rel messages.answer]
+;			movsxd		rsi, rax		; move with all and the sign
 ;			movsx		rsi, rax
+			mov			rsi, rax
 			xor			rax, rax		; setting to 0
 			call		_printf
 			jmp			done
 
 error1:
 ;			mov			rdi, messages.badarg
-			lea			rdi, messages.badarg
+			lea			rdi, [rel messages.badarg]
 			call		_puts
 			jmp			done
 
 error2:
 ;			mov			rdi, messages.negexp
-			lea			rdi, messages.negexp
+			lea			rdi, [rel messages.negexp]
 			call		_puts
 
 done:
