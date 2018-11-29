@@ -20,4 +20,17 @@ _ft_strcat:
 
 loop:											; not implementing NULL protection
 			cmp				byte [rdi], 0
+			jz				continue_merg
+			add				rdi
+			jmp				loop
 
+continue_merg:
+			cmp				byte [rsi], 0
+			mov				byte [rdi], byte [rsi]
+			jz				finished
+			add				rdi
+			add				rsi
+
+
+finished:
+			ret

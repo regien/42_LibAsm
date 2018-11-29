@@ -3,7 +3,7 @@
 ;			void		_ft_strcat(char *str1, const char *str2)
 ;------------------------------------------------------------------
 
-			%include		'ft_strlen.s'
+;			%include		'ft_strlen.s'
 			default			rel
 			global			_ft_strcat
 
@@ -13,31 +13,25 @@
 
 ; use two varaibles 
 			section			.text
+
 _ft_strcat:
-			cmp				rdi, 0
+			mov				rax, rdi			; you are gonna ret that pointer
+
+loop:											; not implementing NULL protection
+			cmp				byte [rdi], 0
+			jz				continue_merg
+			inc				rdi
+			jmp				loop
+
+continue_merg:
+			cmp				byte [rsi], 0
+			xor				rdx, rdx
+			or				rdx, [byte rsi]		; not sure if this gonna work
+			mov				[byte rdi], rdx
 			jz				finished
-			cmp				rsi, 0
-			jz				finished
-			xor				r9, r9						; Num from first '\0'
+			inc				rdi
+			inc				rsi
 
-			call			_ft_strlen
-			mov				rcx, rdi					; pointer to mod
-			push			rdi							; to save the beginning of the pointer s1
-			add				rcx, rax					; position '\0'
-			
-loop:
-			cmp				byte [rsi], 0				; detec if zero, put null on string
-			mov				byte [rdi], byte [rsi]		
-			jz				finished					; then die
-			add				rdi
-			add				rsi
-			jne				loop
-
-; intento de loop para llegar al '\0' de S2
-
-; RDX RCX
 
 finished:
-; MAYBE YOU HAVE TO DO A POP HERE
-			pop				rax
 			ret
