@@ -13,6 +13,7 @@
 ; two comparision and then the end
 ; save 0 to rax at the beginning then save 1 for succes if things
 ; happens
+; there is a simplier version
 
 _ft_isalpha:
 			xor				rax, rax			; default answer
