@@ -5,6 +5,11 @@ char	*str2 = NULL;
 int		status = 1;
 
 
+void	run_is_funcs_tests(int debug)
+{
+	
+}
+
 void	run_strlen_tests(int debug)
 {
 	if (debug == 1)
