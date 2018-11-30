@@ -1,10 +1,13 @@
 NAME = libfts.a
+
 AS = nasm
 ASFLAGS = -f macho64
 GCC = gcc
 GCC_FLGSTESTS = -I inc -o 
 DIR_S = s_funcs/
 DIR_OBJS = objs/
+
+
 S_FILES = ft_bzero.s \
 		  ft_strlen.s
 
@@ -15,6 +18,7 @@ S_FILES = ft_bzero.s \
 OBJECTS = $(addprefix $(DIR_S), $(S_FILES))
 
 TARGETS_OBJ = $(addprefix $(DIR_OBJS), $(S_FILES))
+
 AFTARGETS_OBJ = $(TARGETS_OBJ:.s=.o)
 
 all: $(NAME)
@@ -38,5 +42,6 @@ ob:
 clean:
 	rm -rf objs
 
-#objects/%.o: %.s
-#	$(AS) $(ASFLAGS) -o $@ $<
+fclean: clean
+
+.PHONY: fclean clean all re
