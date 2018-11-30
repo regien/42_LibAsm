@@ -7,7 +7,10 @@ int		status = 1;
 
 void	run_is_funcs_tests(int debug)
 {
-	
+	if (debug == 1)
+	{
+	}
+	printf("ft_strlen: %s\n", status ? "ok" : "ko");
 }
 
 void	run_strlen_tests(int debug)
