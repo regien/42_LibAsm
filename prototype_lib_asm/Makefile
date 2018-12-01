@@ -5,6 +5,7 @@ ASFLAGS = -f macho64
 GCC = gcc
 GCC_FLGSTESTS = -I inc -o 
 DIR_S = s_funcs/
+DIR_T = unit_tests/
 DIR_OBJS = objs/
 
 
@@ -18,6 +19,10 @@ S_FILES = ft_bzero.s \
 # Cheatset $< evaluate afirst item in the list
 # $@ evaluate NAme or calling label
 # $^ evaluates everything at once
+
+TEST_CASES = tests.c
+
+DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))
 
 OBJECTS = $(addprefix $(DIR_S), $(S_FILES))
 
