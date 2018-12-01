@@ -4,6 +4,7 @@ char	*str = "test1";
 char	*str2 = NULL;
 int		status = 1;
 
+/*
 
 void	run_is_funcs_tests(int debug)
 {
@@ -12,6 +13,7 @@ void	run_is_funcs_tests(int debug)
 	}
 	printf("ft_strlen: %s\n", status ? "ok" : "ko");
 }
+*/
 
 void	run_strlen_tests(int debug)
 {

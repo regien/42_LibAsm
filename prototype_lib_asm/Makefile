@@ -26,12 +26,12 @@ TARGETS_OBJ = $(addprefix $(DIR_OBJS), $(S_FILES))
 AFTARGETS_OBJ = $(TARGETS_OBJ:.s=.o)
 
 all: $(NAME)
+	ar rcs $(NAME) $(AFTARGETS_OBJ)
 
 obj:
 	$(AS) $(ASFLAGS)
 
 $(NAME): $(AFTARGETS_OBJ)
-	echo "pendejada"
 
 $(DIR_OBJS)%.o: $(DIR_S)%.s
 	$(AS) $(ASFLAGS) $< -o $@
@@ -40,12 +40,15 @@ $(DIR_OBJS)%.o: $(DIR_S)%.s
 $(AFTARGETS_OBJ): | ob
 
 ob:
-	echo "entering ob"
-	mkdir $(DIR_OBJS)
+	@echo "Creating Directory of Objects"
+	@mkdir $(DIR_OBJS)
 
 clean:
 	rm -rf objs
 
 fclean: clean
+	rm	$(NAME)
+
+re: fclean all
 
 .PHONY: fclean clean all re
