@@ -2,13 +2,16 @@
 # define LIB_ASM_H
 # include <stdio.h>
 # include <unistd.h>
+# include <ctype.h>
 # include <string.h>
 
 // not done
-void		ft_bzero(void *s, size_t n);
 
 // done
 size_t		ft_strlen(const char *str);
+int			ft_isdigit(int c);
+void		ft_bzero(void *s, size_t n);
+
 
 
 #endif

@@ -2,12 +2,12 @@ NAME = libfts.a
 
 AS = nasm
 ASFLAGS = -f macho64
-GCC = gcc
+CC = gcc
 GCC_FLGSTESTS = -I inc -o 
 DIR_S = s_funcs/
 DIR_T = unit_tests/
 DIR_OBJS = objs/
-
+NAME_TEST = test
 
 S_FILES = ft_bzero.s \
 		ft_isalpha.s \
@@ -50,10 +50,15 @@ ob:
 
 clean:
 	rm -rf objs
+	rm $(NAME_TEST)
 
 fclean: clean
-	rm	$(NAME)
+	rm $(NAME)
 
 re: fclean all
+
+test:
+	$(CC) -o $(NAME_TEST) -I inc $(DIR_TESTS) $(NAME)
+
 
 .PHONY: fclean clean all re
