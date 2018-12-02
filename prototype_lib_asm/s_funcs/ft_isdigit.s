@@ -19,7 +19,7 @@ _ft_isdigit:
 			xor				eax, eax
 			sub				edi, 48			; x = x - '0' 
 			cmp				edi, 9
-			setbe			ah		; set below to treat as an unsigned
+			setbe			al		; set below to treat as an unsigned
 ; ah or al refers bot to the 
 			ret						; also set be require a 8 bit register
 									; should be the same ah or al both are 8 bits
