@@ -9,14 +9,14 @@ DIR_T = unit_tests/
 DIR_OBJS = objs/
 NAME_TEST = test
 
-#		ft_isalnum incomplete
 S_FILES = ft_bzero.s \
+		ft_strcat.s \
 		ft_isalpha.s \
 		ft_isascii.s \
 		ft_isdigit.s \
+		ft_isalnum.s \
 		ft_memcpy.s \
 		ft_memset.s \
-		ft_strcat.s \
 		ft_strlen.s \
 		ft_strdup.s
 
