@@ -6,16 +6,16 @@
 			default			rel
 			global			ft_memcpy
 
-; NOT FULLY DONE
-
 ft_memcpy:
 			mov				rax, rdi
 
-loop:
-			cmp				rdx, 0
-			jz				finish
+loop:											; copying the value of what
+			cmp				rdx, 0				; inside the address into
+			jz				finish				; the *dst
 			dec				rdx
-			mov				[byte rdi], [byte rsi]
+			xor				rcx, rcx
+			or				rcx, [byte rsi]
+			mov				[byte rdi], rcx
 			jmp				loop
 
 finish:

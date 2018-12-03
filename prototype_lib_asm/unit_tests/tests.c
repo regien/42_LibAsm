@@ -1,6 +1,5 @@
 #include "lib_asm.h"
 
-
 int main(int ac, char **argv)
 {
 	int		debug = -1;

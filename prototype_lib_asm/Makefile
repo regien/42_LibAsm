@@ -14,7 +14,9 @@ S_FILES = ft_bzero.s \
 		ft_isascii.s \
 		ft_isdigit.s \
 		ft_strcat.s \
-		ft_strlen.s
+		ft_strlen.s \
+		ft_memcpy.s \
+		ft_memset.s
 
 # Cheatset $< evaluate afirst item in the list
 # $@ evaluate NAme or calling label
@@ -52,10 +54,10 @@ ob:
 
 clean:
 	rm -rf objs
-	rm $(NAME_TEST)
+	rm -rf $(NAME_TEST)
 
 fclean: clean
-	rm $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
