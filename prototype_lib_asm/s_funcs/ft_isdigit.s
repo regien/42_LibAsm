@@ -1,6 +1,6 @@
 ;------------------------------------------------------------------
 ;	prototype of the function:
-;			int			isdigit(int c)
+;			int			ft_isdigit(int c)
 ;------------------------------------------------------------------
 ;	Range trick:
 ;	- Kinda similar to what someone does in putnbr

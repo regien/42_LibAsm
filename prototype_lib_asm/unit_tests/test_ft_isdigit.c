@@ -11,7 +11,7 @@ static void		test_once(int c, int debug, int *status)
 		*status = -1;
 }
 
-void			run_is_funcs_tests(int debug)
+void			run_is_digit_test(int debug)
 {
 	int			status = 1;
 

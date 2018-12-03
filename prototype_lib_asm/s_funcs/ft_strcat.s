@@ -31,7 +31,7 @@ continue_merg:
 			jz				finished
 			inc				rdi
 			inc				rsi
-
+			jmp				continue_merg
 
 finished:
 			ret

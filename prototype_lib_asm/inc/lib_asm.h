@@ -11,13 +11,14 @@
 size_t		ft_strlen(const char *str);
 int			ft_isdigit(int c);
 void		ft_bzero(void *s, size_t n);
-
+int			ft_isalpha(int c);
 
 /*
-* Test cases functions
+** Test cases functions
 */
 
-void		run_is_funcs_tests(int debug);
+void		run_is_digit_test(int debug);
 void		run_strlen_tests(int debug);
+void		run_is_alpha_test(int debug);
 
 #endif

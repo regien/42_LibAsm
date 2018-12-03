@@ -9,14 +9,16 @@ DIR_T = unit_tests/
 DIR_OBJS = objs/
 NAME_TEST = test
 
+#		ft_isalnum incomplete
 S_FILES = ft_bzero.s \
 		ft_isalpha.s \
 		ft_isascii.s \
 		ft_isdigit.s \
+		ft_memcpy.s \
+		ft_memset.s \
 		ft_strcat.s \
 		ft_strlen.s \
-		ft_memcpy.s \
-		ft_memset.s
+		ft_strdup.s
 
 # Cheatset $< evaluate afirst item in the list
 # $@ evaluate NAme or calling label
@@ -24,7 +26,8 @@ S_FILES = ft_bzero.s \
 
 TEST_CASES = tests.c \
 			test_ft_strlen.c \
-			test_ft_isdigit.c
+			test_ft_isdigit.c \
+			test_ft_is_alpha.c
 
 DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))
 
@@ -54,10 +57,10 @@ ob:
 
 clean:
 	rm -rf objs
-	rm -rf $(NAME_TEST)
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf $(NAME_TEST)
 
 re: fclean all
 
