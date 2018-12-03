@@ -20,7 +20,9 @@ S_FILES = ft_bzero.s \
 # $@ evaluate NAme or calling label
 # $^ evaluates everything at once
 
-TEST_CASES = tests.c
+TEST_CASES = tests.c \
+			test_ft_strlen.c \
+			test_ft_isdigit.c
 
 DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))
 
