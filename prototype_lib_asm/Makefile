@@ -38,22 +38,34 @@ TARGETS_OBJ = $(addprefix $(DIR_OBJS), $(S_FILES))
 AFTARGETS_OBJ = $(TARGETS_OBJ:.s=.o)
 
 all: $(NAME)
+
+objs:
+	@echo "Creating Directory of Objects"
+	@if [ -d "./objs" ] ; \
+	then \
+		echo "Directory already exist" ; \
+	else \
+		mkdir $(DIR_OBJS); \
+	fi;
+
+$(NAME): objs $(AFTARGETS_OBJ)
 	ar rcs $(NAME) $(AFTARGETS_OBJ)
-
-obj:
-	$(AS) $(ASFLAGS)
-
-$(NAME): $(AFTARGETS_OBJ)
 
 $(DIR_OBJS)%.o: $(DIR_S)%.s
 	$(AS) $(ASFLAGS) $< -o $@
 
 # | requirements
-$(AFTARGETS_OBJ): | ob
+#$(AFTARGETS_OBJ): | ob
+$(AFTARGETS_OBJ):
 
-ob:
-	@echo "Creating Directory of Objects"
-	@mkdir $(DIR_OBJS)
+#ob:
+#	@echo "Creating Directory of Objects"
+#	@if [ -d "./objs" ] ; \
+#	then \
+#		echo "Directory already exist" ; \
+#	else \
+#		mkdir $(DIR_OBJS); \
+#	fi;
 
 clean:
 	rm -rf objs
@@ -68,4 +80,4 @@ test:
 	$(CC) -o $(NAME_TEST) -I inc $(DIR_TESTS) $(NAME)
 
 
-.PHONY: fclean clean all re
+.PHONY: fclean clean re all ob

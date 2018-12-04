@@ -1,6 +1,6 @@
 ;------------------------------------------------------------------
 ;	prototype of the function:
-;			int		_ft_islalpha(int c)
+;			int		_ft_isalpha(int c)
 ; return value:
 ; 0 if false 1 (or x != 0) if true - (valid A-Z ~ a-z)
 ;------------------------------------------------------------------
