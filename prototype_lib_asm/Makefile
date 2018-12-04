@@ -9,6 +9,7 @@ DIR_T = unit_tests/
 DIR_OBJS = objs/
 NAME_TEST = test
 
+#to upper not workin yet
 S_FILES = ft_bzero.s \
 		ft_strcat.s \
 		ft_isalpha.s \
@@ -27,7 +28,8 @@ S_FILES = ft_bzero.s \
 TEST_CASES = tests.c \
 			test_ft_strlen.c \
 			test_ft_isdigit.c \
-			test_ft_is_alpha.c
+			test_ft_is_alpha.c \
+			test_strcat_test.c
 
 DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))
 
@@ -53,19 +55,6 @@ $(NAME): objs $(AFTARGETS_OBJ)
 
 $(DIR_OBJS)%.o: $(DIR_S)%.s
 	$(AS) $(ASFLAGS) $< -o $@
-
-# | requirements
-#$(AFTARGETS_OBJ): | ob
-$(AFTARGETS_OBJ):
-
-#ob:
-#	@echo "Creating Directory of Objects"
-#	@if [ -d "./objs" ] ; \
-#	then \
-#		echo "Directory already exist" ; \
-#	else \
-#		mkdir $(DIR_OBJS); \
-#	fi;
 
 clean:
 	rm -rf objs
