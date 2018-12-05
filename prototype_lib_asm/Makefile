@@ -16,6 +16,8 @@ S_FILES = ft_bzero.s \
 		ft_isascii.s \
 		ft_isdigit.s \
 		ft_isalnum.s \
+		ft_tolower.s \
+		ft_toupper.s \
 		ft_memcpy.s \
 		ft_memset.s \
 		ft_strlen.s \

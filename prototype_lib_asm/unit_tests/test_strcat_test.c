@@ -1,6 +1,8 @@
 #include "lib_asm.h"
 
+// super combinaned test, first test everything else
 
+/*
 static void		test_once(char *str, char *str2, int debug, int *status)
 {
 	char			*t1 = NULL;
@@ -26,3 +28,4 @@ void			run_strcat_test(int debug)
 	test_once("vaina", " pendejada");
 	printf("ft_strcat: %s\n", status ? "ok" : "ko");
 }
+*/
