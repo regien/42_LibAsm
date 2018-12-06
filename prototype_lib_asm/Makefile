@@ -31,7 +31,9 @@ TEST_CASES = tests.c \
 			test_ft_strlen.c \
 			test_ft_isdigit.c \
 			test_ft_is_alpha.c \
+			test_ft_strdup.c \
 			test_strcat_test.c
+# strcat test currently not being used
 
 DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))
 
@@ -69,6 +71,8 @@ re: fclean all
 
 test:
 	$(CC) -o $(NAME_TEST) -I inc $(DIR_TESTS) $(NAME)
+
+runtest: re test
 
 
 .PHONY: fclean clean re all ob

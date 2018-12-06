@@ -16,9 +16,7 @@ _ft_strdup:
 			cmp			rdi, 0			; checking for NULL
 			jz			finished
 			cmp			byte [rdi], 0	; checking for '\0'
-			jz			finished
-
-_ft_str_len:
+			jz			create_str		; have to go to create str instead of finished
 			mov			rcx, rdi
 			push		rdi				; SAVE ADDRESS
 			xor			rdi, rdi
@@ -32,22 +30,28 @@ next_char:
 
 create_str:								; check rsp in case is not aligned
 			inc			rdi				; + 1 for the '\0' char
-			sub			rsp, 8			; <- trying to align stack
+;			sub			rsp, 8			; <- trying to align stack
 			call		_malloc
-			add			rsp, 8
+;			add			rsp, 8
 			cmp			rax, 0			; checking for NULL
 			jz			finished
-			mov			rcx, rax		; adrs RCX and RAX
-			ret
+			mov			rsi, rax		; adrs RCX and RAX
+;			ret			; <---------- CUTTING THE SHIT
 
-dup_str:
+
+dupping:
 			pop			rdi
-			cmp			byte [rdi], 0	; checking '\0'
-			xor			rsi, rsi
-			or			rsi, [byte rdi]
-			mov			[byte rcx], rsi
-			jz			finished
-			jmp			dup_str
+			repnz		movs byte [rsi], byte[rdi]
+			
+
+;dup_str:
+;			pop			rdi
+;			cmp			byte [rdi], 0	; checking '\0'
+;			xor			rsi, rsi
+;			or			rsi, [byte rdi]
+;			lea			[byte rsi], rsi
+;			jz			finished
+;			jmp			dup_str
 
 finished:
 			ret
