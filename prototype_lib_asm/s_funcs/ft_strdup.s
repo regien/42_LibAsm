@@ -12,7 +12,7 @@
 
 			section		.text
 _ft_strdup:
-			xor			rax, rax		; DOESNT MATTER
+;			xor			rax, rax		; DOESNT MATTER <- commenting
 			cmp			rdi, 0			; checking for NULL
 			jz			finished
 			cmp			byte [rdi], 0	; checking for '\0'
@@ -32,9 +32,13 @@ next_char:
 
 create_str:								; check rsp in case is not aligned
 			inc			rdi				; + 1 for the '\0' char
+			sub			rsp, 8			; <- trying to align stack
 			call		_malloc
+			add			rsp, 8
 			cmp			rax, 0			; checking for NULL
+			jz			finished
 			mov			rcx, rax		; adrs RCX and RAX
+			ret
 
 dup_str:
 			pop			rdi
