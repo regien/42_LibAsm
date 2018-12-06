@@ -6,7 +6,7 @@ static void		test_once(int c, int debug, int *status)
 	int		t2 = isdigit(c);
 
 	if (debug == 1)
-		printf("Your ft_digit = |%d|, system = |%d|\n", t1, t2);
+		printf("your ft_digit = |%d|, system = |%d|\n", t1, t2);
 	if (t1 != t2)
 		*status = -1;
 }
