@@ -19,5 +19,5 @@ void			run_is_digit_test(int debug)
 	test_once('4', debug, &status);
 	test_once('5', debug, &status);
 	test_once('9' + 10, debug, &status);
-	printf("ft_isdigit: %s\n", status ? "ok" : "ko");
+	printf("ft_isdigit: %s\n", status == 1 ? "ok" : "ko");
 }

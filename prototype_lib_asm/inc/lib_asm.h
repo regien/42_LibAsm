@@ -5,6 +5,7 @@
 # include <ctype.h>
 # include <string.h>
 # include <stdint.h> // for extended int
+# include <stdlib.h>
 
 // not done
 

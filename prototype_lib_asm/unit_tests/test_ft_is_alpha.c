@@ -13,7 +13,7 @@ static void		test_once(int c, int debug, int *status)
 
 void			run_is_alpha_test(int debug)
 {
-	int			status = -1;
+	int			status = 1;
 
 	test_once('A', debug, &status);
 	test_once('a', debug, &status);
@@ -23,5 +23,5 @@ void			run_is_alpha_test(int debug)
 	test_once('1', debug, &status);
 	test_once('2', debug, &status);
 	test_once('3', debug, &status);
-	printf("ft_isalpha: %s\n", status ? "ok" : "ko");
+	printf("ft_isalpha: %s\n", status == 1 ? "ok" : "ko");
 }
