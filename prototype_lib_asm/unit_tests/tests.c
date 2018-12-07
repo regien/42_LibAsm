@@ -10,6 +10,7 @@ int main(int ac, char **argv)
 
 // run strdup first | you might have to align the stack with rsp+8 the stack
 	run_strlen_tests(debug);
+	run_memset_tests(debug);
 	run_is_digit_test(debug);
 	run_is_alpha_test(debug);
 	run_strdup_test(debug);

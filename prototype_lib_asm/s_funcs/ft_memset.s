@@ -4,18 +4,16 @@
 ;------------------------------------------------------------------
 
 			default			rel
-			global			ft_memset
+			global			_ft_memset
+
 _ft_memset:
-			inc				rdx				; incrementing len for loop
-			mov				rax, rdi		; saving the addr in rax
+			cld
+			mov				rax, rdi
+			push			rax
+			xor				rax, rax
+			mov				rcx, rdx
+			or				al, sil
+			rep				stosb			; store AL at (E)DI until rcx is 0
+			pop				rax
+			ret 
 
-loop:
-;			cmp				rdi, 0			; checking if zero
-; you don't have to compare to zero you dont know what is that memory
-			dec				rdx
-			jz				finish
-			mov				[byte rdi], rsi	; loading value of 2arg to adr
-			jmp				loop
-
-finish:
-			ret								; so you can return the adr

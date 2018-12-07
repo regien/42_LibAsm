@@ -15,6 +15,7 @@ void		ft_bzero(void *s, size_t n);
 int			ft_isalpha(int c);
 
 char		*ft_strdup(char *str);
+void		*ft_memset(void *b, int c, size_t len);
 
 /*
 ** Test cases functions
@@ -24,5 +25,6 @@ void		run_is_digit_test(int debug);
 void		run_strlen_tests(int debug);
 void		run_is_alpha_test(int debug);
 void		run_strdup_test(int debug);
+void		run_memset_tests(int debug);
 
 #endif

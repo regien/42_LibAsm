@@ -32,6 +32,7 @@ TEST_CASES = tests.c \
 			test_ft_isdigit.c \
 			test_ft_is_alpha.c \
 			test_ft_strdup.c \
+			test_ft_memset.c \
 			test_strcat_test.c
 # strcat test currently not being used
 
