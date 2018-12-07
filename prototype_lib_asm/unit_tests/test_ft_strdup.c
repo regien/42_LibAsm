@@ -28,5 +28,5 @@ void			run_strdup_test(int debug)
 	test_once("s", debug, &status);
 	test_once("something never ending", debug, &status);
 	test_once("", debug, &status);
-	printf("ft_strdupt: %s\n", status == 1 ? "ok" : "ko");
+	printf("ft_strdup: %s\n", status == 1 ? "ok" : "ko");
 }
