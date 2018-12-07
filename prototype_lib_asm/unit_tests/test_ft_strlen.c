@@ -10,7 +10,7 @@ static void		test_once(char *str, int debug, int *status)
 
 	if (debug == 1)
 		printf("Your ft_strlen = |%lu| System = |%lu|\n", t1, t2);
-	if (t1 == t2)
+	if (t1 != t2)
 		*status = -1;
 }
 
@@ -23,5 +23,5 @@ void	run_strlen_tests(int debug)
 	test_once("vaina", debug, &status);
 	test_once("", debug, &status);
 	test_once("SOMETHING", debug, &status);
-	printf("ft_strlen: %s\n", status ? "ok" : "ko");
+	printf("ft_strlen: %s\n", status == 1 ? "ok" : "ko");
 }
