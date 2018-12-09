@@ -4,9 +4,9 @@
 ;------------------------------------------------------------------
 ; The received file descriptor should be open
 ; buffer is 4kb basically can open most files
+
 %define		MACHO_SYSCALL(nb)	0x2000000 | nb
 %define		WRITE				4
-;%define		OPEN				5
 %define		CLOSE				6
 %define		READ				3
 %define		STDIN				1
@@ -20,33 +20,25 @@ buffer:		times			SIZE_BUF db 0
 
 			section			.text
 _ft_cat:
-			cmp				rdi, 0
-			jl				finished
-;			push			rdi						; preserving the FD
-; GET the size of what is gonna print and then print it
-; most of the time 4096 is way more than enough
-
+			lea				rsi, [rel buffer]
+	
 reading:
-			push			rdi						; saving FD
-			mov				eax, MACHO_SYSCALL(READ)
-			lea				esi, [rel buffer]
-			mov				edx, SIZE_BUF
-;			sub				rsp, 8					; aligning stack because of push
+			mov				rdx, SIZE_BUF
+			mov				rax, MACHO_SYSCALL(READ)
 			syscall
-			cmp				rax, 0					; if < 0 then exit
-			jl				finished
+			jc				finished				; negative numbers
+			cmp				rax, 0
+			jz				finished				; read EOF when rax = 0
 
 writing:
-			mov				rdx, rax				; number of bytes to print
+			push			rdi
 			mov				rdi, STDIN
-			lea				esi, [rel buffer]
+			mov				rdx, rax				; number of bytes readed
 			mov				rax, MACHO_SYSCALL(WRITE)
 			syscall
-			jc				finished
-			pop				rdi						; restoring fd for read
-			add				rsp, 8
-			jmp				reading					; loop for reading
+			jc				finished				; negative numbers
+			pop				rdi
+			jmp				reading
 
 finished:
-			pop				rdi						; restoring stack pointer
 			ret

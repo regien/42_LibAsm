@@ -8,9 +8,9 @@
 ; of the usual forward.
 
 			default			rel
-			global			ft_memcpy
+			global			_ft_memcpy
 
-ft_memcpy:
+_ft_memcpy:
 			cld
 			mov				rax, rdi			; saving the return ptr
 			cmp				rdx, 0
