@@ -6,17 +6,14 @@
 			default		rel
 			global		_ft_bzero
 
+			section		.text
 _ft_bzero:
-			cmp			rdi, 0						; checkhing for null
-			jz			finished					; not sure if bzero
-			cmp			rsi, 0						; doest this
-			jle			finished					; error checking
-
-loop:
-			mov			byte [rdi], 0		; setting to 0
-			dec			rsi
-			add			rdi, 1
-			jnz			loop
+			cld								; because of the rep instrc
+			cmp			rdi, 0
+			jz			finished			; checking for NULL
+			mov			rcx, rsi			; 2arg -> counter
+			xor			rax, rax
+			rep			stosb				; store AL in EDI until RCX is 0
 
 finished:
 			ret

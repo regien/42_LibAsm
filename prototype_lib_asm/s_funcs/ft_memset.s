@@ -16,4 +16,3 @@ _ft_memset:
 			rep				stosb			; store AL at (E)DI until rcx is 0
 			pop				rax
 			ret 
-

@@ -14,7 +14,7 @@
 
 _ft_isascii:
 				xor			eax, eax	; returning an int value size
-				sub			edi, 127	; total number of ascii values
-				cmp			edi, 0
+				cmp			edi, 127	; dont need to subtract because this
+										; range start at 0
 				setbe		al			; using al instead of ah
 				ret

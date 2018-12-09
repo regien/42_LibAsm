@@ -6,6 +6,7 @@
 				default			rel
 				global			_ft_toupper
 
+; incomplete
 				section			.text
 _ft_toupper:
 				mov				eax, edi

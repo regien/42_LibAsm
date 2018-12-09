@@ -38,7 +38,8 @@ TEST_CASES = tests.c \
 			test_ft_memset.c \
 			test_ft_puts.c \
 			test_ft_cat.c \
-			test_strcat_test.c
+			test_strcat_test.c \
+			test_ft_bzero.c
 # strcat test currently not being used
 
 DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))

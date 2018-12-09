@@ -15,6 +15,7 @@ int main(int ac, char **argv)
 	run_strdup_test(debug); // sound and safe
 	run_puts_test(debug);
 	run_cat(debug);
+	run_test_bzero(debug);
 //	run_is_tolower(debug);
 //	run_strcat_test(debug); still on testing
 }
