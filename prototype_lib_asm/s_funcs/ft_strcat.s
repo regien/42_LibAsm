@@ -3,7 +3,6 @@
 ;			void		_ft_strcat(char *str1, const char *str2)
 ;------------------------------------------------------------------
 
-;			%include		'ft_strlen.s'
 			default			rel
 			global			_ft_strcat
 
@@ -18,7 +17,7 @@ _ft_strcat:
 			mov				rax, rdi			; you are gonna ret that pointer
 
 loop:											; not implementing NULL protection
-			cmp				byte [rdi], 0
+			cmp				byte [rdi], 0		; can change for the rep version
 			jz				continue_merg
 			inc				rdi
 			jmp				loop
