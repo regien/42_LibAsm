@@ -6,6 +6,8 @@
 # include <string.h>
 # include <stdint.h> // for extended int
 # include <stdlib.h>
+# include <fcntl.h>
+
 
 // not done
 
@@ -18,6 +20,9 @@ int			ft_isalpha(int c);
 char		*ft_strdup(char *str);
 void		*ft_memset(void *b, int c, size_t len);
 
+int			ft_puts(const char *str);
+void		ft_cat(int fd);
+
 /*
 ** Test cases functions
 */
@@ -27,5 +32,7 @@ void		run_strlen_tests(int debug);
 void		run_is_alpha_test(int debug);
 void		run_strdup_test(int debug);
 void		run_memset_tests(int debug);
+void		run_puts_test(int debug);
 
+void				run_cat(int debug);
 #endif

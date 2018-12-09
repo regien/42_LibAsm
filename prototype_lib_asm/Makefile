@@ -21,7 +21,9 @@ S_FILES = ft_bzero.s \
 		ft_memcpy.s \
 		ft_memset.s \
 		ft_strlen.s \
-		ft_strdup.s
+		ft_strdup.s \
+		ft_puts.s \
+		ft_cat.s
 
 # Cheatset $< evaluate afirst item in the list
 # $@ evaluate NAme or calling label
@@ -33,6 +35,8 @@ TEST_CASES = tests.c \
 			test_ft_is_alpha.c \
 			test_ft_strdup.c \
 			test_ft_memset.c \
+			test_ft_puts.c \
+			test_ft_cat.c \
 			test_strcat_test.c
 # strcat test currently not being used
 
