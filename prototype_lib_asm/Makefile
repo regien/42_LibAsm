@@ -39,7 +39,9 @@ TEST_CASES = tests.c \
 			test_ft_puts.c \
 			test_ft_cat.c \
 			test_strcat_test.c \
-			test_ft_bzero.c
+			test_ft_bzero.c \
+			test_ft_tolower.c \
+			test_ft_toupper.c
 # strcat test currently not being used
 
 DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))

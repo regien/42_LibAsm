@@ -9,6 +9,8 @@ int main(int ac, char **argv)
 			debug = 1;
 
 	run_strlen_tests(debug);
+	run_to_upper(debug);
+	run_to_lower(debug);
 	run_memset_tests(debug);
 	run_is_digit_test(debug);
 	run_is_alpha_test(debug);
@@ -16,6 +18,4 @@ int main(int ac, char **argv)
 	run_puts_test(debug);
 	run_cat(debug);
 	run_test_bzero(debug);
-//	run_is_tolower(debug);
-//	run_strcat_test(debug); still on testing
 }
