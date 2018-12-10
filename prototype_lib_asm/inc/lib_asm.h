@@ -19,6 +19,8 @@ int			ft_puts(const char *str);
 void		ft_cat(int fd);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
+char		*ft_strndup(char *str, size_t size);
+void		*ft_memalloc(size_t len);
 
 /*
 ** Test cases functions
@@ -33,6 +35,8 @@ void		run_puts_test(int debug);
 void		run_test_bzero(int debug);
 void		run_to_lower(int debug);
 void		run_to_upper(int debug);
-void				run_cat(int debug);
+void		run_cat(int debug);
+void		run_strndup_test(int debug);
+void		run_memalloc_test(int debug);
 
 #endif

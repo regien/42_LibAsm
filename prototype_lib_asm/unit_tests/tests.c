@@ -14,8 +14,10 @@ int main(int ac, char **argv)
 	run_memset_tests(debug);
 	run_is_digit_test(debug);
 	run_is_alpha_test(debug);
-	run_strdup_test(debug); // sound and safe
+	run_strdup_test(debug);
 	run_puts_test(debug);
 	run_cat(debug);
 	run_test_bzero(debug);
+	run_strndup_test(debug);
+	run_memalloc_test(debug);
 }

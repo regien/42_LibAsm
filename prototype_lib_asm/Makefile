@@ -24,7 +24,9 @@ S_FILES = ft_bzero.s \
 		ft_strlen.s \
 		ft_strdup.s \
 		ft_puts.s \
-		ft_cat.s
+		ft_cat.s \
+		ft_strndup.s \
+		ft_memalloc.s
 
 # Cheatset $< evaluate afirst item in the list
 # $@ evaluate NAme or calling label
@@ -41,8 +43,9 @@ TEST_CASES = tests.c \
 			test_strcat_test.c \
 			test_ft_bzero.c \
 			test_ft_tolower.c \
-			test_ft_toupper.c
-# strcat test currently not being used
+			test_ft_toupper.c \
+			test_ft_strndup.c \
+			test_ft_memalloc.c
 
 DIR_TESTS = $(addprefix $(DIR_T), $(TEST_CASES))
 
