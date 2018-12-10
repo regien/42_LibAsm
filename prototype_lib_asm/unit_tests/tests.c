@@ -20,4 +20,5 @@ int main(int ac, char **argv)
 	run_test_bzero(debug);
 	run_strndup_test(debug);
 	run_memalloc_test(debug);
+//	run_strcmp_test(debug);
 }

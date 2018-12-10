@@ -14,7 +14,7 @@ _ft_memcpy:
 			cld
 			mov				rax, rdi			; saving the return ptr
 			cmp				rdx, 0
-			jbe				finished
+			jb				finished
 			mov				rcx, rdx			; initializing counter with len
 			rep				movsb
 

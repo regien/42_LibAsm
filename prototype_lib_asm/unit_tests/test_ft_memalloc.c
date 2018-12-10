@@ -3,12 +3,11 @@
 static void			test_once(char *str, size_t len, int *status, int debug)
 {
 	char		*test = ft_memalloc(len);
-	char		*target = NULL;
 
-	strcpy(target, str);
+	strcpy(test, str);
 	if (debug == 1)
-		printf("Printing copy ft_memalloc = |%s|\n", target);
-	if (!(strcmp(target, test)))
+		printf("Printing copy ft_memalloc = |%s|\n", test);
+	if (strcmp(str, test) != 0)
 		*status = -1;
 }
 
