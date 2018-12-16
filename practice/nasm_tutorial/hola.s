@@ -1,5 +1,5 @@
 ; Simple test to use C functions so of course you are link this with
-; gcc
+; gcc because it does the linking for you
 
 		global		_main
 		extern		_puts
